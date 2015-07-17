@@ -1,0 +1,29 @@
+%!TEX root = Backup.tex
+\section{Worum es geht}
+
+\subsection{Die Aufgabe}
+
+\begin{frame}{Die Aufgabe}
+    \begin{itemize}
+        \item \textbf{Eingabe}: Bilder, die von einer Kamera aus Fahrersicht
+              aufgenommen wurden
+        \item \textbf{Ausgabe}: Ein Bild gleicher Größe, wo jedes Pixel
+              entweder schwarz ist (wenn der Klassifikator denkt es ist Straße)
+              oder weiß ist (wenn dem) nicht so ist.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Die Daten}
+    \href{http://www.cvlibs.net/datasets/kitti/eval_road.php}{KITTI Road Estimation dataset}
+    \begin{itemize}
+        \item Daten-Bilder der Größe $[1226, \dots, 1242] \times [370, \dots, 376]$,
+              8-bit RGB
+        \item Label-Bilder der selben Größe; 8-bit RGB mit 2 Farben
+        \item 289 Trainingsbilder
+        \item 290 Testbilder
+    \end{itemize}
+\end{frame}
+
+\framedgraphic{Daten}{../images/umm_000000.png}
+\framedgraphic{Labels}{../images/umm_road_000000.png}
+\framedgraphic{Overlay}{../images/um_000000-overlay.png}
