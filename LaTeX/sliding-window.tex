@@ -5,30 +5,66 @@
 \subsection{Ergebnisse}
 
 \begin{frame}{Ergebnisse-Convolutional Layer}
-    \includegraphics[scale=0.2]{../images/Convolutional/um_000014+-overlay-fully-49-patch.png}
+\begin{center}
+    \includegraphics[scale=0.25]{../images/Convolutional/um_000014+-overlay-fully-49-patch.png}
+    \end{center}
 \end{frame}
 
  \begin{frame}{Ergebnisse-Convolutional Layer}
-    \includegraphics[scale=0.2]{../images/Convolutional/um_000066-overlay-fully-49-patch.png}
+	 \begin{center}
+    \includegraphics[scale=0.25]{../images/Convolutional/um_000066-overlay-fully-49-patch.png}
+        \end{center}
  \end{frame}
 
 \begin{frame}{Vergleich}
-
-      \includegraphics[scale=0.2]{../images/Convolutional/um_000014-overlay-fully-49-patch.png}
+  \begin{center}
+      \includegraphics[scale=0.24]{../images/Convolutional/um_000014-overlay-fully-49-patch.png}
          \vspace{0.1cm}
-    \includegraphics[scale=0.2]{../images/Convolutional/um_000014-overlay.png}
-
+    \includegraphics[scale=0.24]{../images/Convolutional/um_000014-overlay.png}
+    \end{center}
 \end{frame}
 
 \begin{frame}{Vergleich}
 
-      False Positive Negative .....
+      
+      \begin{table}[h!]
+  \begin{center}
+   % \caption{Caption for the table.}
+    \label{tab:table1}
+    \begin{tabular}{c||c|c|c|c|c}
+      Netztyp & TN & FP & FN & TP & ACC\\
+      \hline
+      \hline
+      Conv - Stride 10 & 0.977 & 0.022 & 0.197 & 0.802 & 0.9471\\
+      Conv - Stride 37 & 0.973 & 0.026 & 0.176 & 0.823 &  \textcolor{red}{0.9475}\\ 
+      Conv - Stride 51 & 0.969 & 0.030 & 0.165 & \textcolor{red}{0.834} & 0.946\\
+      \hline
+      SW - Stride 10 & 0.981 & 0.018 & 0.241 & 0.758 & 0.942\\
+      SW - Stride 37 & 0.959 & 0.040 & 0.212 & 0.787 & 0.929\\
+      SW - Stride 51 & \textcolor{red}{0.982} & 0.017 & 0.451 & 0.548 & 0.906\\
+    \end{tabular}
+    \caption{Ergebnisse der verschiedene neuronalen Netze auf Testset (58 Bilder, ~ 6,7 Mil. Pixel)}
+  \end{center}
+\end{table}
 
 \end{frame}
 
 \begin{frame}{Laufzeiten}
 
-      False Positive Negative .....
+            \begin{table}[h!]
+  \begin{center}
+
+  %  \label{tab:table1}
+    \begin{tabular}{c||c|c|c}
+      Netztyp/Stride & 10 & 37 & 51\\
+      \hline
+      \hline
+      Conv & 1.99 & 0.29 & 0.18 \\
+      SW & 1.83 & 0.2 & 0.11\\
+    \end{tabular}
+        \caption{Ausf\"uhrungszeit pro Bild (621x188 Pixel) in Sekunden.}
+  \end{center}
+\end{table}
 
 \end{frame}
 
@@ -42,10 +78,10 @@
 \subsection{Ausblick}
 \begin{frame}{Ausblick}
     \begin{itemize}
-        \item Wegen zu wenig RAM keine groesseren Patches
+        \item Zu wenig GPU-RAM f\"ur gr\"o\ss ere Patches
         \item Neuronales Netz verbessern
         \item Effizienteres Zusammensetzten der Patches
-        \item Mehr Daten (Lens flare, Beleuchtung)
+        \item Mehr Daten (Lense Flare, Beleuchtung, Fahrbahnmakierungen)
     \end{itemize}
 
 \end{frame}
