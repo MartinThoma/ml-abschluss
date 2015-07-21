@@ -1,29 +1,60 @@
 %!TEX root = Abschluss-ML-Prak-2015.tex
 \section{Unser Ansatz}
 
-\begin{frame}{Modelle}
-	
-
-
-\centering
-
-\begin{itemize}
- \item Klassifikation - Sliding Window \\
- \item Regression - Fully - Patch Evaluation \\
-\end{itemize}
-\end{frame}
-
 \begin{frame}{Klassifikation - Sliding Window}
-	\centering
-	Ungefähre Funktionsweise.
+\begin{minipage}{0.59\textwidth}
+\begin{itemize}
+\item Klassifiziere mittigen Pixel der Eingabe \\
+\item Laufe über das Bild (Sliding Window) \\
+\item Überspringe Pixel zur Beschleunigung
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.39\textwidth}
+	\flushright
+      \includegraphics[]{../images/models/sliding_window.png}
+\end{minipage}
+
+
+\visible<2->{
+	 \begin{center}
+	 \only<1-2> {
+        \includegraphics[scale=0.25]{../images/models/stride10.png}
+      }
+	 \only<3> {
+        \includegraphics[scale=0.25]{../images/models/stride10.png}
+      }
+     \end{center}
+     }
 \end{frame}
 
 \begin{frame}{Regression - Fully - Patch Evaluation}
-	\centering
-	Ungefähre Funktionsweise.
+\begin{minipage}{0.59\textwidth}
+\begin{itemize}
+\item Nutze Regression und Mean Squared Error Zielfunktion \\
+\item Erhalte Information pro Pixel
+\item Füge Bild zusammen \\
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.39\textwidth}
+	\flushright
+      \includegraphics[]{../images/models/fully-conv.png}
+\end{minipage}
+
+
+\visible<2->{
+	 \begin{center}
+	 \only<1-2> {
+        \includegraphics[scale=0.25]{../images/models/fully_stride51.png}
+      }
+	 \only<3> {
+        \includegraphics[scale=0.25]{../images/models/fully_stride37.png}
+      }
+     \end{center}
+     }
 \end{frame}
 
 \begin{frame}{Aufbau unserer Neuronale Netze}
 	\centering
-	Wie das Netz aussieht.
+
+
 \end{frame}
