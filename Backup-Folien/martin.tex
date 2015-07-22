@@ -1,5 +1,5 @@
 %!TEX root = Backup.tex
-\section{Worum es geht}
+\section{Die Aufgabe}
 
 \subsection{Die Aufgabe}
 
@@ -22,6 +22,31 @@
         \item 289 Trainingsbilder
         \item 290 Testbilder
     \end{itemize}
+\end{frame}
+
+\section{Lasagne}
+
+\subsection{Lasagne}
+\begin{frame}[fragile]{Lasagne layer definition}
+\begin{minted}{python}
+class DenseLayer(Layer):
+    def __init__(self, incoming, num_units, W, b, **kwargs):
+        ...
+
+    def get_output_shape_for(self, input_shape):
+        return (input_shape[0], self.num_units)
+
+    def get_output_for(self, input, **kwargs):
+        if input.ndim > 2:
+            input = input.flatten(2)
+        activation = T.dot(input, self.W)
+        if self.b is not None:
+            activation = (activation +
+                          self.b.dimshuffle('x', 0))
+        return self.nonlinearity(activation)
+\end{minted}
+
+
 \end{frame}
 
 \framedgraphic{Daten}{../images/umm_000000.png}
