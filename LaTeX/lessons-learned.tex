@@ -28,7 +28,7 @@
      }
 \end{frame}
 
-\begin{frame}{Regression - Fully - Patch Evaluation}
+\begin{frame}{Regression - Patch Evaluation}
 \begin{minipage}{0.59\textwidth}
 \begin{itemize}
 \item Nutze Regression und Mean Squared Error Zielfunktion \\
@@ -65,7 +65,7 @@ Klassifikationsnetz
 \item 2 Conv Layer mit \\ 10 Filtern $5 \times 5$
 \item 1 Pooling Layer
 \item 1 Output Layer $1 \times 1$
-\vspace{7em}
+\vspace{2.5em}
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.49\textwidth}
@@ -74,12 +74,10 @@ Regressionsnetz
 
 \begin{itemize}
 \item Input Layer $51 \times 51 \times 3$
-\item Hidden Layer mit \\ 10 Filtern $3 \times 3$
-\item Pooling Layer
-\item Dense Layer
-\item Hidden Layer mit \\ 10 Filtern $3 \times 3$
-\item Hidden Layer (Deconv) mit \\ 1 Filtern $51 \times 51$
-\item 1 Output Layer $1 \times 1$
+\item Conv Layer mit \\ 10 Filtern $3 \times 3$
+\item Conv Layer mit \\ 1 Filtern  $51 \times 51$
+\item Reshape Layer
+\item 1 Output Layer $51^2 \times 1$
 \end{itemize}
 
 \end{minipage}
